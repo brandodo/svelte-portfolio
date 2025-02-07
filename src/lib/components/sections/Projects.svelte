@@ -92,18 +92,18 @@
 					icon: LinkIcon
 				}
 			]
-		},
-		'Spotify AI Playlist': {
-			'v1.0': {
-				href: '',
-				stack: [
-					{ label: 'React', icon: ReactLogo },
-					{ label: 'GraphQL', icon: GraphQLLogo },
-					{ label: 'NodeJS', icon: NodeLogo },
-					{ label: 'Express', icon: ExpressLogo }
-				]
-			}
 		}
+		// 'Spotify AI Playlist': {
+		// 	'v1.0': {
+		// 		href: '',
+		// 		stack: [
+		// 			{ label: 'React', icon: ReactLogo },
+		// 			{ label: 'GraphQL', icon: GraphQLLogo },
+		// 			{ label: 'NodeJS', icon: NodeLogo },
+		// 			{ label: 'Express', icon: ExpressLogo }
+		// 		]
+		// 	}
+		// }
 	};
 </script>
 
