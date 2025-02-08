@@ -48,7 +48,7 @@ export const experiences = [
 			light:
 				'Supported two cohorts through an 8 month long program, grading projects and assisting students with questions and course work. Led learning sessions to drive home core concepts, including responsive web design and accessibility',
 			dark: 'Eight months. Graded projects: yes. Answered questions: also yes. Helped… facilitate program completion: mission… accomplished.',
-			snes: 'mentored two cohorts through their 8-month coding quest. My role involved analyzing student builds (projects) and providing guidance to level them up.'
+			snes: 'Mentored two cohorts through their 8-month coding quest. My role involved analyzing student builds (projects) and providing guidance to level them up.'
 		},
 
 		stack: [

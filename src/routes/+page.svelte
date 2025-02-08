@@ -1,10 +1,8 @@
 <script>
 	import { page } from '$app/state';
 	import { fly } from 'svelte/transition';
-	import brandon from '$lib/assets/images/brandon.jpg';
-	import darkBrandon from '$lib/assets/images/brandomeme.jpeg';
-	import MarioBrandon from '$lib/assets/images/MarioBrandon.png';
 	import { onMount } from 'svelte';
+	import { THEMES } from '$lib/enums';
 
 	/**
 	 * @type {Record<string, string[]>}
@@ -25,15 +23,6 @@
 		snes: "It's not god-tier, but the sites are stable, <i>actually</i> accessible, and… look, they won't give you graphical glitches, okay?  It's a playable build."
 	};
 
-	/**
-	 * @type {Record<string, string>}
-	 */
-	const profileImage = {
-		light: brandon,
-		dark: darkBrandon,
-		snes: MarioBrandon
-	};
-
 	let currentRole = $state(0);
 
 	/**
@@ -42,7 +31,6 @@
 	let theme = $derived(page.data.theme);
 
 	let taglines = $derived(roles[theme]);
-	let activeProfile = $derived(profileImage[theme]);
 
 	onMount(() => {
 		const tagline = setInterval(() => {
@@ -58,11 +46,16 @@
 	class="relative flex h-full flex-col items-center justify-center space-y-4 px-4 text-center"
 >
 	<div class="relative">
-		<img
-			src={activeProfile}
-			alt="Profile"
-			class="relative z-10 mx-auto size-20 rounded-full p-1 md:size-32"
-		/>
+		{#each THEMES as th}
+			<img
+				src={th.profile}
+				alt="Profile"
+				class="relative z-10 mx-auto size-24 rounded-full p-1 md:size-32 {theme === th.name
+					? 'flex'
+					: 'hidden'}"
+				class:active={theme === th.name}
+			/>
+		{/each}
 	</div>
 	<h2 class="text-lg tracking-tighter md:text-5xl">Hi, I'm</h2>
 
@@ -85,3 +78,23 @@
 		{@html captions[theme]}
 	</p>
 </div>
+
+<style>
+	.active {
+		animation: fade 0.25s ease-in-out;
+	}
+
+	@keyframes fade {
+		0% {
+			rotate: 0deg;
+			backface-visibility: hidden;
+			opacity: 0;
+		}
+
+		100% {
+			rotate: 360deg;
+			backface-visibility: hidden;
+			opacity: 1;
+		}
+	}
+</style>

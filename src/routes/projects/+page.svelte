@@ -16,7 +16,7 @@
 >
 	{#each projects as project, i}
 		<Card
-			class="group flex h-fit w-full flex-col items-center  rounded-none border-none opacity-75 shadow-none duration-300 hover:bg-secondary hover:opacity-100 hover:shadow-lg lg:w-full lg:flex-row "
+			class="group flex h-fit w-full flex-col items-center rounded-none border-none shadow-none duration-300 hover:bg-secondary hover:opacity-100 hover:shadow-lg lg:w-full lg:flex-row lg:opacity-75 "
 		>
 			<img
 				src={project.image}
