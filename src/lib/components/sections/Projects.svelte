@@ -10,19 +10,25 @@
 </script>
 
 <div
-	class="flex h-40 w-[80%] flex-wrap items-center justify-center gap-y-5"
+	class="flex w-[80%] flex-wrap items-center justify-center gap-y-5"
 	in:fly={{ x: 150, duration: 1000 }}
 >
-	{#each projects as project}
+	{#each projects as project, i}
 		<Card
-			class="flex w-full rounded-none border-none shadow-none duration-300 hover:border-2 hover:bg-secondary hover:shadow-lg "
+			class="flex h-fit w-full flex-col rounded-none border-4 shadow-none duration-300 hover:bg-secondary hover:shadow-lg lg:w-full lg:flex-row "
 		>
+			<img
+				src={project.image}
+				alt={project.name}
+				class="max-h-[400px] w-full object-cover object-center p-5 lg:w-1/3 lg:max-w-[400px]"
+			/>
+
 			<CardContent class="w-full">
 				<h3 class="mb-6 text-2xl font-bold">
 					{project.name}
 				</h3>
 				<div class="flex flex-col flex-wrap gap-5">
-					<p>{project.description}</p>
+					<p>{project.description[theme]}</p>
 
 					{#each project.versions as version}
 						<div class="flex items-center gap-2">

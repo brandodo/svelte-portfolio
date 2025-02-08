@@ -9,12 +9,20 @@ import ExpressLogo from '$lib/assets/icons/Express-Logo.svg?raw';
 import MongoLogo from '$lib/assets/icons/Mongo-Logo.svg?raw';
 import ExternalLinkIcon from '$lib/assets/icons/External-Link.svg?raw';
 import LinkIcon from '$lib/assets/icons/LinkIcon.svg?raw';
+import CreatosOSImage from '$lib/assets/images/CreatorOS-Image.webp';
+import SecureImage from '$lib/assets/images/Secure-Image.webp';
 
 export const projects = [
 	{
 		name: 'Viral Nation Secure',
-		description:
-			'An award-winning, cutting-edge influencer vetting tool that empowers brands to stay ahead of risks, navigate blind spots, and ensure perfect brand alignment—delivering scalable, AI-driven reputation management.',
+		image: SecureImage,
+		description: {
+			light:
+				'An award-winning, cutting-edge influencer vetting tool that empowers brands to stay ahead of risks, navigate blind spots, and ensure perfect brand alignment—delivering scalable, AI-driven reputation management.',
+			dark: '"Award-winning" influencer vetting? Okay. Does it actually prevent PR disasters? Yes. Does it scale? Yes. Is it AI-driven? Sure. Bottom line: it\'s a tool for managing influencer risk. Use it.',
+			snes: 'Level up your brand defense with this award-winning influencer vetting tool. Navigate influencer blind spots and stay ahead of reputational risks with cutting-edge AI.'
+		},
+
 		links: [
 			{ title: '', href: 'https://www.viralnation.com/solution/secure/', icon: ExternalLinkIcon },
 			{
@@ -55,8 +63,13 @@ export const projects = [
 	},
 	{
 		name: 'Viral Nation CreatorOS',
-		description:
-			'A powerful, all-in-one platform that seamlessly connects creators, talent agents, and brands. Designed for efficiency and integration, it streamlines the entire creator management process—enabling effortless collaboration, data-driven insights, and advanced brand reputation management.',
+		image: CreatosOSImage,
+		description: {
+			light:
+				'A powerful, all-in-one platform that seamlessly connects creators, talent agents, and brands. Designed for efficiency and integration, it streamlines the entire creator management process—enabling effortless collaboration, data-driven insights, and advanced brand reputation management.',
+			dark: "Cut the buzzwords. This platform connects creators, agents, and brands. It's built to make creator management… manageable. Get data, track reputation, streamline workflows. It\'s software to help you run your influencer campaigns without completely losing your mind. All in one place. Finally.",
+			snes: 'All-in-one command center for influencer marketing dominance.  Forge alliances, streamline management, and achieve ruthless efficiency. Data-driven insights and reputation firewalls ensure flawless brand control.'
+		},
 		links: [
 			{
 				title: '',

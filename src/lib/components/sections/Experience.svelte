@@ -16,7 +16,7 @@
 >
 	{#each experiences as experience, i}
 		<Card
-			class="group flex w-full flex-col rounded-none border-none shadow-none transition duration-300 hover:border-2 hover:bg-secondary hover:shadow-lg md:flex-row"
+			class="group flex w-full flex-col rounded-none border-4 shadow-none transition duration-300 hover:bg-secondary hover:shadow-lg md:flex-row"
 		>
 			<CardContent class="flex w-full flex-col items-start gap-4 ">
 				<div>

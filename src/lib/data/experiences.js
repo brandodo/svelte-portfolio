@@ -23,7 +23,8 @@ export const experiences = [
 		description: {
 			light:
 				"Build, ship, and maintain Viral Nation's suite of award winning applications. Coordinate within cross-functional teams, including developers, designers, and product managers to deliver human-centered and accessible web solutions, serving users from Fortune 500 companies, such as <b>Meta Platforms</b>, <b>Uber</b>, and <b>Activision/Blizzard</b>",
-			dark: "Build their apps. Ship 'em. Keep 'em running. Work with whoever shows up – devs, designers, suit-types.  Make websites that work for anyone, even big shot companies like <b>Meta Platforms</b>, <b>Uber</b>, and <b>Activision/Blizzard</b>"
+			dark: "Build their apps. Ship 'em. Keep 'em running. Work with whoever shows up – devs, designers, suit-types.  Make websites that work for anyone, even big shot companies like <b>Meta Platforms</b>, <b>Uber</b>, and <b>Activision/Blizzard</b>",
+			snes: "I get to build some seriously cool, award-winning web apps. Teaming up with awesome devs, designers, and product folks to create user-friendly, accessible online experiences. Building stuff that even boss-level clients like <b>Meta</b>, <b>Uber</b>, and <b>Activision/Blizzard</b> love to use – and it's pretty fun!"
 		},
 		stack: [
 			{ label: 'React', icon: ReactLogo },
@@ -46,7 +47,8 @@ export const experiences = [
 		description: {
 			light:
 				'Supported two cohorts through an 8 month long program, grading projects and assisting students with questions and course work. Led learning sessions to drive home core concepts, including responsive web design and accessibility',
-			dark: 'Eight months. Graded projects: yes. Answered questions: also yes. Helped… facilitate program completion: mission… accomplished.'
+			dark: 'Eight months. Graded projects: yes. Answered questions: also yes. Helped… facilitate program completion: mission… accomplished.',
+			snes: 'mentored two cohorts through their 8-month coding quest. My role involved analyzing student builds (projects) and providing guidance to level them up.'
 		},
 
 		stack: [
@@ -65,7 +67,8 @@ export const experiences = [
 		description: {
 			light:
 				"Bridged cross-functional teams, coordinating iniatives in improving the user's online shopping experience on <b>thebay.com</b>. Worked with engineering, analytics, fulfillment, external vendors, and customer service to deliver exceptional quality at all points of the customer lifecycle",
-			dark: 'Worked with Engineering, Analytics, Fulfillment, and Vendors – you know, the usual departments. My goal was to help deliver "exceptional quality" across the customer lifecycle.  Reality was more like, "ensure things work and keep customers happy."'
+			dark: 'Worked with Engineering, Analytics, Fulfillment, and Vendors – you know, the usual departments. My goal was to help deliver "exceptional quality" across the customer lifecycle. Reality was more like, "ensure things work and keep customers happy."',
+			snes: "I played the role of Guild Leader, forging alliances across Engineering, Analytics, Fulfillment, and Support guilds. My quest: to optimize the user's online shopping journey, coordinating party-wide initiatives to enhance thebay.com experience."
 		},
 		stack: [{ label: 'Salesforce Commerce Cloud', icon: SalesforceLogo }],
 		href: 'https://thebay.com/',
