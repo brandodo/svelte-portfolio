@@ -3,9 +3,6 @@
 	import GithubIcon from '$lib/assets/icons/GithubIcon.svg?raw';
 	import LinkedInIcon from '$lib/assets/icons/LinkedInIcon.svg?raw';
 	import EmailIcon from '$lib/assets/icons/EmailIcon.svg?raw';
-	import SunIcon from '$lib/assets/icons/SunIcon.svg?raw';
-	import MoonIcon from '$lib/assets/icons/MoonIcon.svg?raw';
-	import SNESIcon from '$lib/assets/icons/SNESIcon.svg?raw';
 	import darkBiden from '$lib/assets/images/darkbiden.png';
 	import SpaceInvaderIcon from '$lib/assets/images/SpaceInvaderIcon.svg?raw';
 	import {
@@ -17,18 +14,19 @@
 	import { Button as FormButton } from '$lib/components/ui/form';
 	import { enhance } from '$app/forms';
 	import Icon from '$lib/components/Icon.svelte';
-	import { fly } from 'svelte/transition';
 	import Navigation from '$lib/components/Navigation.svelte';
+	import { THEMES } from '$lib/enums';
 
 	let { data, children } = $props();
-	let theme = $derived(data.theme);
+	let theme = $state(data.theme);
 
 	// @ts-ignore
 	const submitUpdateTheme = ({ action }) => {
-		const theme = action.searchParams.get('theme');
+		const newTheme = action.searchParams.get('theme');
+		theme = newTheme;
 
-		if (theme) {
-			document.documentElement.setAttribute('data-theme', theme);
+		if (newTheme) {
+			document.documentElement.setAttribute('data-theme', newTheme);
 		}
 	};
 
@@ -49,55 +47,30 @@
 		data-sveltekit-noscroll
 		class="absolute right-5 top-5 z-10 flex gap-2 sm:flex-col"
 	>
-		<FormButton
-			formaction="/?/setTheme&theme=light"
-			class="min-w-screen {theme === 'light' ? '' : 'text-zinc-500'}"
-			size="icon"
-			variant="icon"
-			><Icon svg={SunIcon} size="lg" />
-		</FormButton>
-
-		<FormButton
-			formaction="/?/setTheme&theme=dark"
-			class="min-w-screen {theme === 'dark' ? '' : 'text-zinc-500'}"
-			size="icon"
-			variant="icon"
-			><Icon svg={MoonIcon} size="lg" />
-		</FormButton>
-
-		<FormButton
-			formaction="/?/setTheme&theme=snes"
-			class="min-w-screen {theme === 'snes' ? '' : 'text-zinc-500'}"
-			size="icon"
-			variant="icon"
-			><Icon svg={SNESIcon} size="lg" />
-		</FormButton>
+		{#each THEMES as th}
+			<FormButton
+				formaction="/?/setTheme&theme={th.name}"
+				class="min-w-screen {theme === th.name ? '' : 'text-zinc-500'}"
+				size="icon"
+				variant="icon"
+				><Icon svg={th.icon} size="lg" />
+			</FormButton>
+		{/each}
 	</form>
 
-	{#if theme === 'dark'}
-		<div>
-			<img
-				src={darkBiden}
-				alt="Profile"
-				class="absolute -left-11 -top-4 w-36 rotate-[135deg]"
-				in:fly={{ x: 0, y: 50, duration: 500 }}
-				out:fly={{ x: 0, y: 50, duration: 250 }}
-			/>
-		</div>
-	{/if}
+	<img
+		src={darkBiden}
+		alt="Profile"
+		class="absolute -left-11 -top-4 hidden w-36"
+		class:biden={theme === 'dark'}
+	/>
 
-	{#if theme === 'snes'}
-		<div
-			in:fly={{ x: 0, y: 50, duration: 500 }}
-			out:fly={{ x: 0, y: 50, duration: 250 }}
-			class="absolute -bottom-12 -left-12 h-fit w-fit rotate-[45deg] opacity-50"
-		>
-			<Icon svg={SpaceInvaderIcon} --svg-width="12rem" --svg-height="12rem" />
-		</div>
-	{/if}
+	<div class="absolute -bottom-12 -left-12 hidden h-fit w-fit" class:alien={theme === 'snes'}>
+		<Icon svg={SpaceInvaderIcon} --svg-width="12rem" --svg-height="12rem" />
+	</div>
 
 	<Navigation />
-	
+
 	<section
 		class="no-scrollbar relative my-5 flex h-[800px] flex-col items-center overflow-y-scroll md:w-[80%]"
 	>
@@ -129,3 +102,30 @@
 		</TooltipProvider>
 	</footer>
 </main>
+
+<style>
+	.biden {
+		display: flex;
+		animation: peekaboo 0.25s ease-in-out;
+		animation-fill-mode: forwards;
+		rotate: 135deg;
+	}
+
+	.alien {
+		display: flex;
+		animation: peekaboo 0.25s ease-in-out;
+		animation-fill-mode: forwards;
+		rotate: 45deg;
+	}
+
+	@keyframes peekaboo {
+		0% {
+			transform: translate(25%, 150%);
+			opacity: 0;
+		}
+		100% {
+			transform: translate(0, 0);
+			opacity: 1;
+		}
+	}
+</style>

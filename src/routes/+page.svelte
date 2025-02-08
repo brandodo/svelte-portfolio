@@ -40,7 +40,9 @@
 	 * @type {string}
 	 */
 	let theme = $derived(page.data.theme);
+
 	let taglines = $derived(roles[theme]);
+	let activeProfile = $derived(profileImage[theme]);
 
 	onMount(() => {
 		const tagline = setInterval(() => {
@@ -57,7 +59,7 @@
 >
 	<div class="relative">
 		<img
-			src={profileImage[theme]}
+			src={activeProfile}
 			alt="Profile"
 			class="relative z-10 mx-auto size-20 rounded-full p-1 md:size-32"
 		/>
