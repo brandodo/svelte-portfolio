@@ -1,5 +1,7 @@
 import { SECTION_NAMES } from '$lib/enums';
 import { redirect } from '@sveltejs/kit';
+import { projects } from '$lib/data/projects.js';
+import { experiences } from '$lib/data/experiences.js';
 
 export const load = ({ url }) => {
 	let selectedSection;
@@ -14,7 +16,9 @@ export const load = ({ url }) => {
 	}
 
 	return {
-		selectedSection
+		selectedSection,
+		projects,
+		experiences
 	};
 };
 

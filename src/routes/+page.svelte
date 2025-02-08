@@ -6,6 +6,7 @@
 	import { SECTION_NAMES } from '$lib/enums';
 
 	let selectedSection = $derived(page.url.searchParams.get('section'));
+	let { data } = $props();
 </script>
 
 <section
@@ -17,10 +18,10 @@
 	{/if}
 
 	{#if selectedSection === SECTION_NAMES.EXPERIENCE}
-		<Experience />
+		<Experience experiences={data.experiences} />
 	{/if}
 
 	{#if selectedSection === SECTION_NAMES.PROJECTS}
-		<Projects />
+		<Projects projects={data.projects} />
 	{/if}
 </section>

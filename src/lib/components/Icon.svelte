@@ -77,9 +77,6 @@
 			return passedSvg.replace(/<svg[ \n]([^>]*)>/, '').replace('</svg>', '');
 		}
 
-		console.error(
-			'ui-svelte Icon: Element passed to `svg` prop is not a valid SVG element. Please pass a valid SVG element.'
-		);
 		return undefined;
 	}
 
@@ -106,8 +103,6 @@
 		if (titleMatch && titleMatch[1]) {
 			return titleMatch && titleMatch[1];
 		}
-
-		console.error('ui-svelte Icon: No title found in provided SVG. Please set a title manually.');
 	}
 </script>
 

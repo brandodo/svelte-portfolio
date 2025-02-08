@@ -1,6 +1,5 @@
 <script>
 	import { Button } from '$lib/components/ui/button';
-	import { Moon, Sun } from 'lucide-svelte';
 	import '../app.css';
 	import { SECTION_NAMES } from '$lib/enums';
 	import { page } from '$app/state';
@@ -9,6 +8,7 @@
 	import EmailIcon from '$lib/assets/icons/EmailIcon.svg?raw';
 	import SunIcon from '$lib/assets/icons/SunIcon.svg?raw';
 	import MoonIcon from '$lib/assets/icons/MoonIcon.svg?raw';
+	import SNESIcon from '$lib/assets/icons/SNESIcon.svg?raw';
 	import darkBiden from '$lib/assets/images/darkbiden.png';
 
 	import {
@@ -46,14 +46,30 @@
 	use:enhance={submitUpdateTheme}
 	data-sveltekit-keepfocus
 	data-sveltekit-noscroll
-	class="absolute right-5 top-5 z-10"
+	class="absolute right-5 top-5 z-10 flex flex-col gap-2"
 >
 	<FormButton
-		formaction="/?/setTheme&theme={theme === 'light' ? 'dark' : 'light'}"
-		class="min-w-screen "
+		formaction="/?/setTheme&theme=light"
+		class="min-w-screen {theme === 'light' ? '' : 'text-zinc-500'}"
 		size="icon"
-		variant="absolute icon"
-		><Icon svg={theme === 'dark' ? SunIcon : MoonIcon} size="xl" />
+		variant="icon"
+		><Icon svg={SunIcon} size="lg" />
+	</FormButton>
+
+	<FormButton
+		formaction="/?/setTheme&theme=dark"
+		class="min-w-screen {theme === 'dark' ? '' : 'text-zinc-500'}"
+		size="icon"
+		variant="icon"
+		><Icon svg={MoonIcon} size="lg" />
+	</FormButton>
+
+	<FormButton
+		formaction="/?/setTheme&theme=snes"
+		class="min-w-screen {theme === 'snes' ? '' : 'text-zinc-500'}"
+		size="icon"
+		variant="icon"
+		><Icon svg={SNESIcon} size="lg" />
 	</FormButton>
 </form>
 
@@ -71,17 +87,22 @@
 		<Button
 			href={`?section=${SECTION_NAMES.ABOUT}`}
 			variant={selectedSection === SECTION_NAMES.ABOUT ? 'ghost' : 'default'}
-			class="rounded-none">ABOUT</Button
+			class="rounded-none {selectedSection === SECTION_NAMES.ABOUT ? 'hover:bg-transparent' : ''}"
+			>ABOUT</Button
 		>
 		<Button
 			href={`?section=${SECTION_NAMES.EXPERIENCE}`}
 			variant={selectedSection === SECTION_NAMES.EXPERIENCE ? 'ghost' : 'default'}
-			class="rounded-none">EXPERIENCE</Button
+			class="rounded-none {selectedSection === SECTION_NAMES.EXPERIENCE
+				? 'hover:bg-transparent'
+				: ''}">EXPERIENCE</Button
 		>
 		<Button
 			href={`?section=${SECTION_NAMES.PROJECTS}`}
 			variant={selectedSection === SECTION_NAMES.PROJECTS ? 'ghost' : 'default'}
-			class="rounded-none">PROJECTS</Button
+			class="rounded-none  {selectedSection === SECTION_NAMES.PROJECTS
+				? 'hover:bg-transparent'
+				: ''}">PROJECTS</Button
 		>
 	</nav>
 

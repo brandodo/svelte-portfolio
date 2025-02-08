@@ -63,6 +63,36 @@
 		--sidebar-border: 240 3.7% 15.9%;
 		--sidebar-ring: 217.2 91.2% 59.8%;
 	}
+
+	[data-theme='snes'] {
+		--background: 237 38% 80%; /* #b5b6e4 - Light SNES purple-blue */
+		--foreground: 246 45% 47%; /* #4f43ae - Dark SNES purple */
+		--muted: 270 5% 57%; /* #908a99 - Muted gray-purple */
+		--muted-foreground: 300 4% 35%; /* #cec9cc - Light gray */
+		--popover: 237 38% 80%; /* #b5b6e4 */
+		--popover-foreground: 246 45% 47%; /* #4f43ae */
+		--card: 237 38% 80%; /* #b5b6e4 */
+		--card-foreground: 246 45% 47%; /* #4f43ae */
+		--border: 270 5% 57%; /* #908a99 */
+		--input: 270 5% 57%; /* #908a99 */
+		--primary: 246 45% 47%; /* #4f43ae */
+		--primary-foreground: 300 4% 80%; /* #cec9cc */
+		--secondary: 239 47% 75%; /* #908a99 */
+		--secondary-foreground: 300 4% 80%; /* #cec9cc */
+		--accent: 237 38% 80%; /* #b5b6e4 */
+		--accent-foreground: 246 45% 47%; /* #4f43ae */
+		--destructive: 0 70% 45%; /* Keeping a standard red */
+		--destructive-foreground: 300 4% 80%; /* #cec9cc */
+		--ring: 246 45% 47%; /* #4f43ae */
+		--sidebar-background: 300 12% 12%; /* #211a21 */
+		--sidebar-foreground: 300 4% 80%; /* #cec9cc */
+		--sidebar-primary: 246 45% 47%; /* #4f43ae */
+		--sidebar-primary-foreground: 300 4% 80%; /* #cec9cc */
+		--sidebar-accent: 237 38% 80%; /* #b5b6e4 */
+		--sidebar-accent-foreground: 246 45% 47%; /* #4f43ae */
+		--sidebar-border: 270 5% 57%; /* #908a99 */
+		--sidebar-ring: 246 45% 47%; /* #4f43ae */
+	}
 }
 
 @layer base {

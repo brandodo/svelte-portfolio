@@ -11,7 +11,18 @@
 	 */
 	const roles = {
 		light: ['Full Stack Software Engineer', 'Human-Centered Developer', 'Front-End Specialist'],
-		dark: ['I build websites', 'I make tech suck less for humans', 'I make pretty buttons work']
+		dark: ['I build websites', 'I make tech suck less for humans', 'I make pretty buttons work'],
+		snes: ['Level 99 Code Architect', 'NPC-Friendly Developer', 'UI/UX Quest Master']
+	};
+
+	/**
+	 * @type {Record<string, string>}
+	 */
+	const captions = {
+		light:
+			'I develop web solutions that are functional, universally accessible, and aesthetically pleasing.',
+		dark: "I build websites that work, are usable by everyone, and don't offend the eye. What else do you want?",
+		snes: "It's not god-tier, but the sites are stable, <i>actually</i> accessible, and… look, they won't give you graphical glitches, okay?  It's a playable build."
 	};
 
 	let currentRole = $state(0);
@@ -41,16 +52,6 @@
 			alt="Profile"
 			class="relative z-10 mx-auto size-32 rounded-full p-1"
 		/>
-
-		<!-- {#if theme === 'dark'}
-			<img
-				src={darkBiden}
-				alt="Profile"
-				class="absolute -top-5 left-1/3 rotate-45"
-				in:fly={{ x: 0, y: 50, duration: 500 }}
-				out:fly={{ x: 0, y: 50, duration: 250 }}
-			/>
-		{/if} -->
 	</div>
 	<h2 class="text-3xl tracking-tighter md:text-5xl">Hi, I'm</h2>
 
@@ -67,9 +68,7 @@
 	</div>
 
 	<p class="mx-auto max-w-xl text-lg text-muted-foreground">
-		{theme === 'dark'
-			? "Digital experiences so good, they're almost illegal. (Just kidding... mostly.)"
-			: 'Creating digital experiences that blend innovation with ease of use. Every pixel, every interaction, crafted with purpose.'}
+		{@html captions[theme]}
 	</p>
 </div>
 
