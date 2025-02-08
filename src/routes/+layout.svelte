@@ -23,8 +23,12 @@
 	import { fly } from 'svelte/transition';
 
 	let { data, children } = $props();
-	let selectedSection = $derived(page.url.searchParams.get('section'));
 	let theme = $derived(data.theme);
+	let pathname = $derived(page.url.pathname);
+
+	let homeRoute = ROUTES.HOME;
+	let experienceRoute = ROUTES.EXPERIENCE;
+	let projectsRoute = ROUTES.PROJECTS;
 
 	// @ts-ignore
 	const submitUpdateTheme = ({ action }) => {
@@ -101,21 +105,20 @@
 
 	<nav class="align-center flex w-full justify-center gap-2 pt-20">
 		<Button
-			href={ROUTES.HOME}
-			variant={selectedSection === ROUTES.HOME ? 'ghost' : 'default'}
-			class="rounded-none {selectedSection === ROUTES.HOME ? 'hover:bg-transparent' : ''}"
-			>HOME</Button
+			href={homeRoute}
+			variant={pathname === homeRoute ? 'ghost' : 'default'}
+			class="rounded-none {pathname === homeRoute ? 'hover:bg-transparent' : ''}">HOME</Button
 		>
 		<Button
-			href={ROUTES.EXPERIENCE}
-			variant={selectedSection === ROUTES.EXPERIENCE ? 'ghost' : 'default'}
-			class="rounded-none {selectedSection === ROUTES.EXPERIENCE ? 'hover:bg-transparent' : ''}"
+			href={experienceRoute}
+			variant={pathname === experienceRoute ? 'ghost' : 'default'}
+			class="rounded-none {pathname === experienceRoute ? 'hover:bg-transparent' : ''}"
 			>EXPERIENCE</Button
 		>
 		<Button
-			href={ROUTES.PROJECTS}
-			variant={selectedSection === ROUTES.PROJECTS ? 'ghost' : 'default'}
-			class="rounded-none  {selectedSection === ROUTES.PROJECTS ? 'hover:bg-transparent' : ''}"
+			href={projectsRoute}
+			variant={pathname === projectsRoute ? 'ghost' : 'default'}
+			class="rounded-none  {pathname === projectsRoute ? 'hover:bg-transparent' : ''}"
 			>PROJECTS</Button
 		>
 	</nav>
