@@ -1,5 +1,5 @@
-export const SECTION_NAMES = {
-	ABOUT: 'About',
-	EXPERIENCE: 'Experience',
-	PROJECTS: 'Projects'
+export const ROUTES = {
+	HOME: '/',
+	EXPERIENCE: '/experience',
+	PROJECTS: '/projects'
 };

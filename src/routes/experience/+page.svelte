@@ -2,18 +2,16 @@
 	import { fly } from 'svelte/transition';
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import ExternalLinkIcon from '$lib/assets/icons/External-Link.svg?raw';
-	import Icon from '../Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
-	import { Badge } from '../ui/badge';
+	import { Badge } from '$lib/components/ui/badge';
 
 	let theme = $derived(page.data.theme);
-	let { experiences } = $props();
+	let { data } = $props();
+	let { experiences } = data;
 </script>
 
-<div
-	class="relative flex h-full w-[80%] flex-col gap-y-5 md:w-[80%]"
-	in:fly={{ x: -150, duration: 1000 }}
->
+<div class="relative flex h-screen w-[80%] flex-col gap-y-5" in:fly={{ x: -150, duration: 1000 }}>
 	{#each experiences as experience, i}
 		<Card
 			class="group flex w-full flex-col rounded-none border-4 shadow-none transition duration-300 hover:bg-secondary hover:shadow-lg md:flex-row"

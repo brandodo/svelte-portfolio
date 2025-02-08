@@ -1,12 +1,13 @@
 <script>
 	import { Card, CardContent } from '$lib/components/ui/card';
 	import { fly } from 'svelte/transition';
-	import Icon from '../Icon.svelte';
+	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
-	import { Badge } from '../ui/badge';
+	import { Badge } from '$lib/components/ui/badge';
 
 	let theme = $derived(page.data.theme);
-	let { projects } = $props();
+	let { data } = $props();
+	let { projects } = data;
 </script>
 
 <div

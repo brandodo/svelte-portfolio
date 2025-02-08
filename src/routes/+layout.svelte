@@ -1,7 +1,7 @@
 <script>
 	import { Button } from '$lib/components/ui/button';
 	import '../app.css';
-	import { SECTION_NAMES } from '$lib/enums';
+	import { ROUTES } from '$lib/enums';
 	import { page } from '$app/state';
 	import GithubIcon from '$lib/assets/icons/GithubIcon.svg?raw';
 	import LinkedInIcon from '$lib/assets/icons/LinkedInIcon.svg?raw';
@@ -34,7 +34,7 @@
 			document.documentElement.setAttribute('data-theme', theme);
 		}
 	};
-	
+
 	const socials = [
 		{ icon: LinkedInIcon, href: 'https://linkedin.com/in/ong-brandon/', label: '/in/ong-brandon' },
 		{ icon: GithubIcon, href: 'https://github.com/brandodo', label: '/brandodo' },
@@ -101,28 +101,28 @@
 
 	<nav class="align-center flex w-full justify-center gap-2 pt-20">
 		<Button
-			href={`?section=${SECTION_NAMES.ABOUT}`}
-			variant={selectedSection === SECTION_NAMES.ABOUT ? 'ghost' : 'default'}
-			class="rounded-none {selectedSection === SECTION_NAMES.ABOUT ? 'hover:bg-transparent' : ''}"
-			>ABOUT</Button
+			href={ROUTES.HOME}
+			variant={selectedSection === ROUTES.HOME ? 'ghost' : 'default'}
+			class="rounded-none {selectedSection === ROUTES.HOME ? 'hover:bg-transparent' : ''}"
+			>HOME</Button
 		>
 		<Button
-			href={`?section=${SECTION_NAMES.EXPERIENCE}`}
-			variant={selectedSection === SECTION_NAMES.EXPERIENCE ? 'ghost' : 'default'}
-			class="rounded-none {selectedSection === SECTION_NAMES.EXPERIENCE
-				? 'hover:bg-transparent'
-				: ''}">EXPERIENCE</Button
+			href={ROUTES.EXPERIENCE}
+			variant={selectedSection === ROUTES.EXPERIENCE ? 'ghost' : 'default'}
+			class="rounded-none {selectedSection === ROUTES.EXPERIENCE ? 'hover:bg-transparent' : ''}"
+			>EXPERIENCE</Button
 		>
 		<Button
-			href={`?section=${SECTION_NAMES.PROJECTS}`}
-			variant={selectedSection === SECTION_NAMES.PROJECTS ? 'ghost' : 'default'}
-			class="rounded-none  {selectedSection === SECTION_NAMES.PROJECTS
-				? 'hover:bg-transparent'
-				: ''}">PROJECTS</Button
+			href={ROUTES.PROJECTS}
+			variant={selectedSection === ROUTES.PROJECTS ? 'ghost' : 'default'}
+			class="rounded-none  {selectedSection === ROUTES.PROJECTS ? 'hover:bg-transparent' : ''}"
+			>PROJECTS</Button
 		>
 	</nav>
 
-	{@render children()}
+	<section class="relative my-8 flex h-[800px] flex-col items-center overflow-y-scroll px-4">
+		{@render children()}
+	</section>
 
 	<footer class="w-full">
 		<TooltipProvider>

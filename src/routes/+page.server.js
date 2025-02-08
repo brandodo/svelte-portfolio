@@ -1,24 +1,8 @@
-import { SECTION_NAMES } from '$lib/enums';
-import { redirect } from '@sveltejs/kit';
 import { projects } from '$lib/data/projects.js';
-import { experiences } from '$lib/data/experiences.js';
 
-export const load = ({ url }) => {
-	let selectedSection;
-
-	if (
-		!url.searchParams.get('section') ||
-		!Object.values(SECTION_NAMES).includes(url.searchParams.get('section'))
-	) {
-		redirect(303, `?section=${SECTION_NAMES.ABOUT}`);
-	} else {
-		selectedSection = url.searchParams.get('section');
-	}
-
+export const load = () => {
 	return {
-		selectedSection,
-		projects,
-		experiences
+		projects
 	};
 };
 
