@@ -11,10 +11,10 @@
 	let { experiences } = data;
 </script>
 
-<div class="relative flex h-screen w-[80%] flex-col gap-y-5" in:fly={{ x: -150, duration: 1000 }}>
+<div class="relative flex h-screen w-full flex-col gap-y-5" in:fly={{ x: -150, duration: 1000 }}>
 	{#each experiences as experience, i}
 		<Card
-			class="group flex w-full flex-col rounded-none border-4 shadow-none transition duration-300 hover:bg-secondary hover:shadow-lg md:flex-row"
+			class="group flex w-full flex-col rounded-none border-none shadow-none transition duration-300 hover:bg-secondary hover:shadow-lg md:flex-row"
 		>
 			<CardContent class="flex w-full flex-col items-start gap-4 ">
 				<div>

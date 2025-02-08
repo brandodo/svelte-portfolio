@@ -1,8 +1,5 @@
 <script>
-	import { Button } from '$lib/components/ui/button';
 	import '../app.css';
-	import { ROUTES } from '$lib/enums';
-	import { page } from '$app/state';
 	import GithubIcon from '$lib/assets/icons/GithubIcon.svg?raw';
 	import LinkedInIcon from '$lib/assets/icons/LinkedInIcon.svg?raw';
 	import EmailIcon from '$lib/assets/icons/EmailIcon.svg?raw';
@@ -21,14 +18,10 @@
 	import { enhance } from '$app/forms';
 	import Icon from '$lib/components/Icon.svelte';
 	import { fly } from 'svelte/transition';
+	import Navigation from '$lib/components/Navigation.svelte';
 
 	let { data, children } = $props();
 	let theme = $derived(data.theme);
-	let pathname = $derived(page.url.pathname);
-
-	let homeRoute = ROUTES.HOME;
-	let experienceRoute = ROUTES.EXPERIENCE;
-	let projectsRoute = ROUTES.PROJECTS;
 
 	// @ts-ignore
 	const submitUpdateTheme = ({ action }) => {
@@ -47,7 +40,7 @@
 </script>
 
 <main
-	class="align-center relative flex h-screen w-full flex-col justify-center overflow-hidden text-foreground"
+	class="relative flex h-dvh w-full flex-col items-center justify-center overflow-hidden py-20 text-foreground"
 >
 	<form
 		method="POST"
@@ -103,33 +96,17 @@
 		</div>
 	{/if}
 
-	<nav class="align-center flex w-full justify-center gap-2 pt-20">
-		<Button
-			href={homeRoute}
-			variant={pathname === homeRoute ? 'ghost' : 'default'}
-			class="rounded-none {pathname === homeRoute ? 'hover:bg-transparent' : ''}">HOME</Button
-		>
-		<Button
-			href={experienceRoute}
-			variant={pathname === experienceRoute ? 'ghost' : 'default'}
-			class="rounded-none {pathname === experienceRoute ? 'hover:bg-transparent' : ''}"
-			>EXPERIENCE</Button
-		>
-		<Button
-			href={projectsRoute}
-			variant={pathname === projectsRoute ? 'ghost' : 'default'}
-			class="rounded-none  {pathname === projectsRoute ? 'hover:bg-transparent' : ''}"
-			>PROJECTS</Button
-		>
-	</nav>
-
-	<section class="relative my-8 flex h-[800px] flex-col items-center overflow-y-scroll px-4">
+	<Navigation />
+	
+	<section
+		class="no-scrollbar relative my-5 flex h-[800px] flex-col items-center overflow-y-scroll md:w-[80%]"
+	>
 		{@render children()}
 	</section>
 
 	<footer class="w-full">
 		<TooltipProvider>
-			<div class="align-center flex justify-center">
+			<div class="flex items-center justify-center">
 				{#each socials as social}
 					<Tooltip>
 						<TooltipTrigger>

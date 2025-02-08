@@ -11,17 +11,17 @@
 </script>
 
 <div
-	class="flex w-[80%] flex-wrap items-center justify-center gap-y-5"
+	class="flex flex-wrap items-center justify-center gap-y-20"
 	in:fly={{ x: 150, duration: 1000 }}
 >
 	{#each projects as project, i}
 		<Card
-			class="flex h-fit w-full flex-col rounded-none border-4 shadow-none duration-300 hover:bg-secondary hover:shadow-lg lg:w-full lg:flex-row "
+			class="group flex h-fit w-full flex-col items-center  rounded-none border-none opacity-75 shadow-none duration-300 hover:bg-secondary hover:opacity-100 hover:shadow-lg lg:w-full lg:flex-row "
 		>
 			<img
 				src={project.image}
 				alt={project.name}
-				class="max-h-[400px] w-full object-cover object-center p-5 lg:w-1/3 lg:max-w-[400px]"
+				class="hidden max-h-[400px] w-1/4 object-cover object-center p-5 shadow-xl duration-300 [transform:perspective(1000px)_rotateX(10deg)_rotateY(25deg)_rotateZ(-3deg)] group-hover:shadow-none group-hover:[transform:perspective(1000px)_rotateX(0deg)_rotateY(0deg)_rotateZ(0deg)] lg:flex"
 			/>
 
 			<CardContent class="w-full">
