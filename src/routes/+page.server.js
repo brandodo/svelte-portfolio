@@ -1,9 +1,8 @@
-import { roles, captions } from '$lib/data/profile.js';
+import { roles } from '$lib/data/profile.js';
 
 export const load = () => {
 	return {
-		roles,
-		captions
+		roles
 	};
 };
 

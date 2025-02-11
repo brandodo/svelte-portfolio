@@ -1,6 +1,5 @@
 <script>
 	import '../app.css';
-	import darkBiden from '$lib/assets/images/darkbiden.png';
 	import SpaceInvaderIcon from '$lib/assets/images/SpaceInvaderIcon.svg?raw';
 	import {
 		Tooltip,
@@ -50,13 +49,6 @@
 		{/each}
 	</form>
 
-	<img
-		src={darkBiden}
-		alt="Profile"
-		class="absolute -left-11 -top-4 hidden w-36"
-		class:biden={theme === 'dark'}
-	/>
-
 	<div class="absolute -bottom-12 -left-12 hidden h-fit w-fit" class:alien={theme === 'snes'}>
 		<Icon svg={SpaceInvaderIcon} --svg-width="12rem" --svg-height="12rem" />
 	</div>
@@ -96,13 +88,6 @@
 </main>
 
 <style>
-	.biden {
-		display: flex;
-		animation: peekaboo 0.25s ease-in-out;
-		animation-fill-mode: forwards;
-		rotate: 135deg;
-	}
-
 	.alien {
 		display: flex;
 		animation: peekaboo 0.25s ease-in-out;
