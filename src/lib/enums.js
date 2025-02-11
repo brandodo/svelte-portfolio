@@ -6,9 +6,9 @@ import darkBrandon from '$lib/assets/images/brandomeme.jpeg';
 import MarioBrandon from '$lib/assets/images/MarioBrandon.png';
 
 export const ROUTES = {
-	HOME: '/',
-	EXPERIENCE: '/experience',
-	PROJECTS: '/projects'
+	Home: '/',
+	Experience: '/experience',
+	Projects: '/projects'
 };
 
 export const THEMES = [
