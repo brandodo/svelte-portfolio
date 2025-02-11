@@ -1,8 +1,5 @@
 <script>
 	import '../app.css';
-	import GithubIcon from '$lib/assets/icons/GithubIcon.svg?raw';
-	import LinkedInIcon from '$lib/assets/icons/LinkedInIcon.svg?raw';
-	import EmailIcon from '$lib/assets/icons/EmailIcon.svg?raw';
 	import darkBiden from '$lib/assets/images/darkbiden.png';
 	import SpaceInvaderIcon from '$lib/assets/images/SpaceInvaderIcon.svg?raw';
 	import {
@@ -18,6 +15,7 @@
 	import { THEMES } from '$lib/enums';
 
 	let { data, children } = $props();
+	let { socials } = data;
 	let theme = $state(data.theme);
 
 	// @ts-ignore
@@ -29,12 +27,6 @@
 			document.documentElement.setAttribute('data-theme', newTheme);
 		}
 	};
-
-	const socials = [
-		{ icon: LinkedInIcon, href: 'https://linkedin.com/in/ong-brandon/', label: '/in/ong-brandon' },
-		{ icon: GithubIcon, href: 'https://github.com/brandodo', label: '/brandodo' },
-		{ icon: EmailIcon, href: 'mailto:brandonong93@gmail.com', label: 'brandonong93@gmail.com' }
-	];
 </script>
 
 <main
@@ -72,12 +64,12 @@
 	<Navigation />
 
 	<section
-		class="no-scrollbar relative my-5 flex h-[800px] flex-col items-center overflow-y-scroll md:w-[80%]"
+		class="no-scrollbar relative my-5 flex h-[800px] max-w-[1200px] flex-col items-center overflow-y-scroll md:w-[80%]"
 	>
 		{@render children()}
 	</section>
 
-	<footer class="w-full">
+	<footer>
 		<TooltipProvider>
 			<div class="flex items-center justify-center">
 				{#each socials as social}

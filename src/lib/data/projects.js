@@ -22,9 +22,11 @@ export const projects = [
 			dark: '"Award-winning" influencer vetting? Okay. Does it actually prevent PR disasters? Yes. Does it scale? Yes. Is it AI-driven? Sure. Bottom line: it\'s a tool for managing influencer risk. Use it.',
 			snes: 'Level up your brand defense with this award-winning influencer vetting tool. Navigate influencer blind spots and stay ahead of reputational risks with cutting-edge AI.'
 		},
-
+		product: {
+			href: 'https://www.viralnation.com/solution/secure/',
+			icon: ExternalLinkIcon
+		},
 		links: [
-			{ title: '', href: 'https://www.viralnation.com/solution/secure/', icon: ExternalLinkIcon },
 			{
 				title: 'SXSW 2024 Innovation Award',
 				href: 'https://www.businesswire.com/news/home/20240314727908/en/Viral-Nations-AI-Powered-Brand-Safety-Solution-Wins-SXSW-Innovation-Award/',
@@ -70,15 +72,14 @@ export const projects = [
 			dark: "Cut the buzzwords. This platform connects creators, agents, and brands. It's built to make creator management… manageable. Get data, track reputation, streamline workflows. It\'s software to help you run your influencer campaigns without completely losing your mind. All in one place. Finally.",
 			snes: 'All-in-one command center for influencer marketing dominance.  Forge alliances, streamline management, and achieve ruthless efficiency. Data-driven insights and reputation firewalls ensure flawless brand control.'
 		},
+		product: {
+			href: 'https://www.viralnation.com/solution/creatoros/',
+			icon: ExternalLinkIcon
+		},
 		links: [
 			{
-				title: '',
-				href: 'https://www.viralnation.com/solution/creatoros/',
-				icon: ExternalLinkIcon
-			},
-			{
 				title: 'Financial Post',
-				href: 'https://financialpost.com/pmn/business-wire-news-releases-pmn/viral-nation-sets-its-apart-in-the-rapidly-growing-creator-economy-with-launch-of-end-to-end-talent-management-and-analytics-platform-viral-nation_creatoros',
+				href: 'https://financialpost.com/pmn/business-wire-news-releases-pmn/viral-nation-sets-itself-apart-in-the-rapidly-growing-creator-economy-with-launch-of-end-to-end-talent-management-and-analytics-platform-viral-nation_creatoros',
 				icon: LinkIcon
 			}
 		],

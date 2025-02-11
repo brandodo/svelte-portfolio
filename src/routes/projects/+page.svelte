@@ -4,16 +4,14 @@
 	import Icon from '$lib/components/Icon.svelte';
 	import { page } from '$app/state';
 	import { Badge } from '$lib/components/ui/badge';
+	import ExternalLinkIcon from '$lib/assets/icons/External-Link.svg?raw';
 
 	let theme = $derived(page.data.theme);
 	let { data } = $props();
 	let { projects } = data;
 </script>
 
-<div
-	class="flex flex-wrap items-center justify-center gap-y-20"
-	in:fly={{ x: 150, duration: 1000 }}
->
+<div class="flex flex-wrap items-center justify-center gap-y-5" in:fly={{ x: 150, duration: 1000 }}>
 	{#each projects as project, i}
 		<Card
 			class="group flex h-fit w-full flex-col items-center rounded-none border-none shadow-none duration-300 hover:bg-secondary hover:opacity-100 hover:shadow-lg lg:w-full lg:flex-row lg:opacity-75 "
@@ -25,10 +23,22 @@
 			/>
 
 			<CardContent class="w-full">
-				<h3 class="mb-6 text-2xl font-bold">
-					{project.name}
-				</h3>
-				<div class="flex flex-col flex-wrap gap-5">
+				<div class="flex items-center">
+					<h3 class="text-2xl font-bold">
+						{project.name}
+					</h3>
+
+					<Badge
+						href={project.product.href}
+						target="_blank"
+						variant="ghost"
+						class="no-wrap flex h-fit items-center justify-center gap-1 rounded-none border-none py-2 transition hover:-translate-y-1  hover:translate-x-1 hover:text-zinc-500"
+					>
+						<Icon svg={ExternalLinkIcon} size="sm" />
+					</Badge>
+				</div>
+
+				<div class="flex flex-col flex-wrap gap-5 px-2 pt-1">
 					<p>{project.description[theme]}</p>
 
 					{#each project.versions as version}
@@ -63,5 +73,9 @@
 				</div>
 			</CardContent>
 		</Card>
+
+		{#if i < projects.length - 1}
+			<hr class="w-1/4 self-center" />
+		{/if}
 	{/each}
 </div>

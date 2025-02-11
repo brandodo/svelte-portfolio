@@ -19,7 +19,7 @@ export const experiences = [
 			{ name: 'Intermediate Software Engineer II', primary: true },
 			{ name: 'Software Engineer', primary: false }
 		],
-		time: '2022 - Present',
+		time: 'Nov 2022 — Present',
 		description: {
 			light:
 				"Build, ship, and maintain Viral Nation's suite of award winning applications. Coordinate within cross-functional teams, including developers, designers, and product managers to deliver human-centered and accessible web solutions, serving users from Fortune 500 companies, such as <b>Meta Platforms</b>, <b>Uber</b>, and <b>Activision/Blizzard</b>",
@@ -43,7 +43,7 @@ export const experiences = [
 	},
 	{
 		title: [{ name: 'Teaching Assistant - Software Engineering (Part-time)', primary: true }],
-		time: '2022 - 2023',
+		time: 'June 2022 — Oct 2024',
 		description: {
 			light:
 				'Supported two cohorts through an 8 month long program, grading projects and assisting students with questions and course work. Led learning sessions to drive home core concepts, including responsive web design and accessibility',
@@ -63,7 +63,7 @@ export const experiences = [
 	},
 	{
 		title: [{ name: 'Site Operations Associate Manager', primary: true }],
-		time: '2018 - 2022',
+		time: 'Sept 2021 — Nov 2022',
 		description: {
 			light:
 				"Bridged cross-functional teams, coordinating iniatives in improving the user's online shopping experience on <b>thebay.com</b>. Worked with engineering, analytics, fulfillment, external vendors, and customer service to deliver exceptional quality at all points of the customer lifecycle",

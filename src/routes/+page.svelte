@@ -4,25 +4,8 @@
 	import { onMount } from 'svelte';
 	import { THEMES } from '$lib/enums';
 
-	/**
-	 * @type {Record<string, string[]>}
-	 */
-	const roles = {
-		light: ['Full Stack Software Engineer', 'Human-Centered Developer', 'Front-End Specialist'],
-		dark: ['I build websites', 'I make tech suck less for humans', 'I make pretty buttons work'],
-		snes: ['Level 99 Code Architect', 'NPC-Friendly Developer', 'UI/UX Quest Master']
-	};
-
-	/**
-	 * @type {Record<string, string>}
-	 */
-	const captions = {
-		light:
-			'I develop web solutions that are functional, universally accessible, and aesthetically pleasing.',
-		dark: "I build websites that work, are usable by everyone, and don't offend the eye. What else do you want?",
-		snes: "It's not god-tier, but the sites are stable, <i>actually</i> accessible, and… look, they won't give you graphical glitches, okay?  It's a playable build."
-	};
-
+	let { data } = $props();
+	let { captions, roles } = data;
 	let currentRole = $state(0);
 
 	/**
@@ -42,17 +25,17 @@
 </script>
 
 <div
-	in:fly={{ y: 50, duration: 1000 }}
+	in:fly={{ y: -50, duration: 1000 }}
 	class="relative flex h-full flex-col items-center justify-center space-y-4 px-4 text-center"
 >
-	<div class="relative">
-		{#each THEMES as th}
+	<div class="relative size-24 md:size-32">
+		{#each THEMES as th, i}
 			<img
 				src={th.profile}
 				alt="Profile"
-				class="relative z-10 mx-auto size-24 rounded-full p-1 md:size-32 {theme === th.name
-					? 'flex'
-					: 'hidden'}"
+				class="absolute mx-auto size-24 rounded-full p-1 md:size-32 {theme === th.name
+					? 'z-10'
+					: `-z-${10 * (i + 1)}`}"
 				class:active={theme === th.name}
 			/>
 		{/each}
@@ -81,20 +64,20 @@
 
 <style>
 	.active {
-		animation: fade 0.25s ease-in-out;
+		animation: fade 0.35s ease-in-out;
 	}
 
 	@keyframes fade {
 		0% {
 			rotate: 0deg;
 			backface-visibility: hidden;
-			opacity: 0;
+			/* opacity: 0; */
 		}
 
 		100% {
 			rotate: 360deg;
 			backface-visibility: hidden;
-			opacity: 1;
+			/* opacity: 1; */
 		}
 	}
 </style>

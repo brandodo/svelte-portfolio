@@ -16,50 +16,57 @@
 		<Card
 			class="group flex w-full flex-col rounded-none border-none shadow-none transition duration-300 hover:bg-secondary hover:shadow-lg md:flex-row"
 		>
-			<CardContent class="flex w-full flex-col items-start gap-4 ">
-				<div>
-					{#each experience.title as title}
-						{#if title.primary}
-							<h2 class="text-xl font-bold md:text-2xl">
-								{title.name} · {experience.company}
-							</h2>
-						{:else}
-							<h2 class="text-md text-xl font-bold md:text-lg">
-								{title.name} · {experience.company}
-							</h2>
-						{/if}
-					{/each}
-				</div>
+			<a href={experience.href} target="_blank">
+				<CardContent class="flex w-full flex-col items-start">
+					<div class="flex flex-col items-start gap-2 md:flex-row md:items-center">
+						<div>
+							{#each experience.title as title}
+								{#if title.primary}
+									<h2 class="text-xl font-bold group-hover:text-slate-500 md:text-2xl">
+										{title.name} · {experience.company}
+									</h2>
+								{:else}
+									<h2
+										class="text-md text-xl font-bold text-zinc-500 group-hover:text-slate-500 md:text-lg"
+									>
+										{title.name}
+									</h2>
+								{/if}
+							{/each}
+						</div>
 
-				<div class="m-2">
-					<p class="text-md">{experience.time}</p>
+						<Badge
+							href=""
+							target="_blank"
+							variant="ghost"
+							class="no-wrap flex h-fit items-center justify-center gap-1 rounded-none border-none py-2 transition group-hover:-translate-y-1 group-hover:translate-x-1 group-hover:text-slate-500"
+						>
+							<Icon svg={ExternalLinkIcon} size="sm" />
+						</Badge>
+					</div>
 
-					<p>{@html experience.description[theme]}</p>
-				</div>
+					<div class="mx-2 mb-4 mt-2">
+						<p class="flex text-sm text-zinc-500">{experience.time}</p>
 
-				<div class="flex flex-wrap items-center gap-2">
-					{#each experience.stack as stack}
-						<Icon
-							svg={stack.icon}
-							size="lg"
-							title={stack.label}
-							fill={theme === 'light' ? '#000' : '#fff'}
-						/>
-					{/each}
-				</div>
+						<p>{@html experience.description[theme]}</p>
+					</div>
 
-				<Badge
-					href={experience.href}
-					target="_blank"
-					class="no-wrap flex items-center justify-center gap-1 rounded-none  py-2"
-				>
-					<Icon svg={ExternalLinkIcon} size="xs" />
-				</Badge>
-			</CardContent>
+					<div class="flex flex-wrap items-center gap-2">
+						{#each experience.stack as stack}
+							<Icon
+								svg={stack.icon}
+								size="lg"
+								title={stack.label}
+								fill={theme === 'light' ? '#000' : '#fff'}
+							/>
+						{/each}
+					</div>
+				</CardContent>
+			</a>
 		</Card>
 
 		{#if i < experiences.length - 1}
-			<hr class="w-1/3 self-center" />
+			<hr class="w-1/4 self-center" />
 		{/if}
 	{/each}
 </div>

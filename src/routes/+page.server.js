@@ -1,8 +1,9 @@
-import { projects } from '$lib/data/projects.js';
+import { roles, captions } from '$lib/data/profile.js';
 
 export const load = () => {
 	return {
-		projects
+		roles,
+		captions
 	};
 };
 
